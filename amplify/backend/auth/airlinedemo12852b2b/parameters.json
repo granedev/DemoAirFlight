@@ -1,0 +1,78 @@
+{
+    "identityPoolName": "airlinedemo12852b2b_identitypool_12852b2b",
+    "allowUnauthenticatedIdentities": false,
+    "lambdaLogPolicy": "airlin_12852b2b_lambda_log_policy",
+    "openIdLambdaRoleName": "airlin_12852b2b_openid_lambda_role",
+    "openIdRolePolicy": "airlin_12852b2b_openid_pass_role_policy",
+    "openIdLambdaIAMPolicy": "airlin_12852b2b_openid_lambda_iam_policy",
+    "openIdLogPolicy": "airlin_12852b2b_openid_lambda_log_policy",
+    "userPoolName": "airlinedemo12852b2b_userpool_12852b2b",
+    "autoVerifiedAttributes": [
+        "email"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+        "SMS Text Message"
+    ],
+    "roleName": "airlin12852b2b_sns-role",
+    "roleExternalId": "airlin12852b2b_role_external_id",
+    "policyName": "airlin12852b2b-sns-policy",
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": true,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [
+        "email"
+    ],
+    "userpoolClientName": "airlin12852b2b_app_client",
+    "userpoolClientGenerateSecret": true,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+        "email"
+    ],
+    "userpoolClientReadAttributes": [
+        "email"
+    ],
+    "mfaLambdaRole": "airlin12852b2b_totp_lambda_role",
+    "mfaLambdaLogPolicy": "airlin12852b2b_totp_lambda_log_policy",
+    "mfaPassRolePolicy": "airlin12852b2b_totp_pass_role_policy",
+    "mfaLambdaIAMPolicy": "airlin12852b2b_totp_lambda_iam_policy",
+    "userpoolClientLambdaRole": "airlin12852b2b_userpoolclient_lambda_role",
+    "userpoolClientLogPolicy": "airlin12852b2b_userpoolclient_lambda_log_policy",
+    "userpoolClientLambdaPolicy": "airlin12852b2b_userpoolclient_lambda_iam_policy",
+    "userpoolClientSetAttributes": true,
+    "resourceName": "airlinedemo12852b2b",
+    "authSelections": "identityPoolAndUserPool",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    },
+    "unauthRoleArn": {
+        "Fn::GetAtt": [
+            "UnauthRole",
+            "Arn"
+        ]
+    },
+    "useDefault": "manual",
+    "usernameAttributes": [
+        "email"
+    ],
+    "thirdPartyAuth": true,
+    "authProviders": [],
+    "hostedUI": true,
+    "hostedUIDomainName": "airlinedemo48b05f78-48b05f78",
+    "authProvidersUserPool": [],
+    "hostedUIProviderMeta": "[]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:8080/\"],\"LogoutURLs\":[\"http://localhost:8080/\"]}"
+}

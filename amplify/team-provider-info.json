@@ -1,0 +1,21 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "airlinedemo-dev-20190624115213-authRole",
+            "UnauthRoleArn": "arn:aws:iam::754203749524:role/airlinedemo-dev-20190624115213-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::754203749524:role/airlinedemo-dev-20190624115213-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "airlinedemo-dev-20190624115213-deployment",
+            "UnauthRoleName": "airlinedemo-dev-20190624115213-unauthRole",
+            "StackName": "airlinedemo-dev-20190624115213",
+            "StackId": "arn:aws:cloudformation:us-east-1:754203749524:stack/airlinedemo-dev-20190624115213/08ad6ed0-9698-11e9-b598-12b31d3117be"
+        },
+        "categories": {
+            "auth": {
+                "airlinedemo12852b2b": {
+                    "hostedUIProviderCreds": "[]"
+                }
+            }
+        }
+    }
+}
