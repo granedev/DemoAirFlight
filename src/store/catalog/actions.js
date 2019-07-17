@@ -38,18 +38,33 @@ export function fetchFlights({ commit }, { date, departure, arrival }) {
     try {
     //  const { data: flightData } = await axios.get("/mocks/flights.json");
     //  const flights = flightData.map(flight => new Flight(flight));
+    const formattedDate = date.slice(-4) + "-" + date.slice(3, 5) + "-" + date.slice(0, 2);
+    console.log(formattedDate);
       //flight filter
+      console.log(date);
       const flightfilter = {
         filter:{
           departureDate:{
-            beginWith:"2019-07"
+            beginsWith: date.slice(-4)
+          },
+          arrivalAirportCode:{
+            eq:arrival
+          },
+          departureAirportCode:{
+            eq:departure
           }
-        }
+
+        },
+        limit:2
       }
+      
 
       // graphql API
       const flightDataApi = await API.graphql(graphqlOperation(listFlights));
-     const { data: {listFlights: { items: flightData}}} = await API.graphql(graphqlOperation(listFlights));
+     
+      const { data: {listFlights: { items: flightData}}} = await API.graphql(graphqlOperation(listFlights, flightfilter));
+
+
 
       // const { data: {listFlights:{items:flightData }} } = flightDataApi; // await axios.get("/mocks/flights.json");
         const flights = flightData.map(flight => new Flight(flight));
